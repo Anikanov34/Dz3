@@ -1,26 +1,17 @@
-﻿// Задача 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-// 14212 -> нет
-// 23432 -> да
-// 12821 -> да
+﻿// Задача 23
+
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125 
 void CheckingNumber()
 {
-int number =23432;
-int current_number = number;
-int result = 0;
-while (current_number > 0)
-{
-    int digit = current_number % 10;
-    result = result * 10+ digit;
-    current_number /= 10;
-    Console.WriteLine(result);
+     int number = 55;
+
+     for (int i = 1; i <= number; i++)
+     {
+        Console.WriteLine($"{i} * {i} * {i} = {Math.Pow(i ,3)}");
+     }
 }
-if(number == result)
-{
-    Console.WriteLine($"число палиндром");
-}
-else
-{
-    Console.WriteLine($"число не палиндром");
-}
-}
-CheckingNumber();
+
+ CheckingNumber();
