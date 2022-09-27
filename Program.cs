@@ -1,14 +1,26 @@
-﻿// Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+﻿// Задача 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// 14212 -> нет
+// 23432 -> да
+// 12821 -> да
 void CheckingNumber()
 {
-int a_x = 1;
-int a_y = 1;
-int a_z = 1;
-int b_x = 0;
-int b_y = 0;
-int b_z = 0;
-
-double result = Math.Sqrt(Math.Pow(a_x-b_x, 2)+ Math.Pow(a_y-b_y, 2)+ Math.Pow(a_z-b_z, 2));
-Console.WriteLine(result);
+int number =23432;
+int current_number = number;
+int result = 0;
+while (current_number > 0)
+{
+    int digit = current_number % 10;
+    result = result * 10+ digit;
+    current_number /= 10;
+    Console.WriteLine(result);
+}
+if(number == result)
+{
+    Console.WriteLine($"число палиндром");
+}
+else
+{
+    Console.WriteLine($"число не палиндром");
+}
 }
 CheckingNumber();
