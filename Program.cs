@@ -1,17 +1,21 @@
-﻿// Задача 23
+﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
+Console.WriteLine($"\nЗадача 25. Возведене числа A в натуральную степень B");
 
-// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-
-// 3 -> 1, 8, 27
-// 5 -> 1, 8, 27, 64, 125 
-void CheckingNumber()
-{
-     int number = 55;
-
-     for (int i = 1; i <= number; i++)
-     {
-        Console.WriteLine($"{i} * {i} * {i} = {Math.Pow(i ,3)}");
-     }
+int Exponentiation(int numberA, int numberB){
+  int result = 1;
+  for(int i=1; i <= numberB; i++){
+    result = result * numberA;
+  }
+    // int result = Math.Pow(numberA, numberB);
+    return result;
 }
 
- CheckingNumber();
+  Console.Write("Введите число A: ");
+  int numberA = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите число B: ");
+  int numberB = Convert.ToInt32(Console.ReadLine());
+
+  int exponentiation = Exponentiation(numberA, numberB);
+  Console.WriteLine("Ответ: " + exponentiation);
